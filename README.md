@@ -2,23 +2,23 @@
 
 Despliegue automatizado de Mt2Web.py
 
-#Motivacion
+# Motivacion
 
 La idea de este proyecto es ayudar a las personas a desplegar la aplicación Mt2Web.py mas rapido, y puedan tener funcionando las páginas de sus servidores en menor tiempo.
 
-#Caracteristicas principales
+# Caracteristicas principales
 
 1. Para implementar esta pagina solo es necesario tener conocimiento basico
 2. Se realizara el despliegue con un Dockerfile
 3. No es necesario tener conocimientos en servidores web
 
-#Requerimientos
+# Requerimientos
 
 1. VPS minimo de 512 MB de Ram y 5 GB disco
 2. Instalar docker.io en el vps
 3. Instalar git en el vps
 
-#Despliegue
+# Despliegue
 
 Para realizar el despliegue se usan los siguientes comandos.
 
