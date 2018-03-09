@@ -39,13 +39,13 @@ Ahora vamos a realizar la creacion de la imagen y el despliegue de esta.
 
 ```
 docker build -t luisito666/mt2web .
-docker run -d -p 80:80 luisito666/mt2web
+docker run -d -p 80:80 --name mt2web luisito666/mt2web
 ```
 
 Si quieren ingresar al contenedor que ejecutaron.
 
 ```
-docker exec -it luisito666/mt2web bash
+docker exec -it mt2web bash
 ```
 
 Si quieren ver el estado del contenedor
