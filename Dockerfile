@@ -1,5 +1,5 @@
 FROM ubuntu
-MAINTAINER Luis Penagos <luispenagos91@gmail.com>
+LABEL maintainer="luispenagos91@gmail.com"
 
 ENV TERM=xterm
 
@@ -14,12 +14,12 @@ apt-get clean &&\
 pip3 install --upgrade pip
 
 
-ADD Mt2Web.py /var/www/html/Mt2Web.py
-ADD default /etc/nginx/sites-available/default
+ADD Mt2Web.py/requirements.txt /var/www/html/Mt2Web.py/
+ADD nginx/default /etc/nginx/sites-available/default
 
 WORKDIR /var/www/html/Mt2Web.py
 
-RUN pip install -r /var/www/html/Mt2Web.py/requirements.txt
+RUN pip install -r requirements.txt
 RUN service nginx restart
 
 EXPOSE 80

@@ -32,14 +32,23 @@ Explicación:
 2. Se ingresa al directorio que se clono
 3. Se clona el repositorio del proyecto principal
 
-Nota: Antes de realizar la imagen, se tiene que crear el archivo settings.py en la carpeta core del proyecto Mt2Web.py, esto para que funcione correctamente. De no realizarse la maquina que se desplega no sabra a que base de datos conectarse.
-para mas informacion del archivo settings.py puedes ingresar a [Mt2Web.py](https://github.com/luisito666/Mt2Web.py)
+Nota: Antes de realizar la imagen, se tiene configurar el archivo config.yml.
+Para mas informacion del archivo config.yml puedes ingresar a [Mt2Web.py](https://github.com/luisito666/Mt2Web.py)
 
-Ahora vamos a realizar la creacion de la imagen y el despliegue de esta.
+Ahora vamos a realizar la creacion de la imagen.
 
 ```
 docker build -t luisito666/mt2web .
-docker run -d -p 80:80 --name mt2web luisito666/mt2web
+```
+
+Ahora vamos a ejecutar el contenedor con la aplicacion.
+
+Nota: Antes de iniciar el contenedor con la aplicacion se deben ejecutar las migraciones.
+Para mas informacion acerca de las migraciones puedes ingresar a [Mt2Web.py](https://github.com/luisito666/Mt2Web.py)
+
+```
+cd Mt2Web.py/
+docker run -d -p 80:80 --name mt2web -v $PWD:/var/www/html/Mt2Web.py/ luisito666/mt2web
 ```
 
 Si quieren ingresar al contenedor que ejecutaron.
