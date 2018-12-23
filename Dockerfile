@@ -9,12 +9,13 @@ apt-get install -y build-essential && \
 apt-get install -y python3 && \
 apt-get install -y python3-pip && \
 apt-get install -y python3 libmysqlclient-dev && \
-apt-get install -y nginx vim &&\
+apt-get install -y nginx vim wget &&\
 apt-get clean &&\
 pip3 install --upgrade pip
 
+RUN mkdir -p /var/www/html/Mt2Web.py/ && \
+wget https://raw.githubusercontent.com/luisito666/Mt2Web.py/master/requirements.txt --directory-prefix=/var/www/html/Mt2Web.py/
 
-ADD Mt2Web.py/requirements.txt /var/www/html/Mt2Web.py/
 ADD nginx/default /etc/nginx/sites-available/default
 
 WORKDIR /var/www/html/Mt2Web.py
